@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | Academic Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text"><h1>Academic Project Tracker</h1><span>Department Ledger &amp; Progress Desk</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="add-project.html">Add Project</a>
+      <a href="login.html">Login</a>
+      <a href="register.html" aria-current="page">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-intro text-center">
+      <div class="eyebrow">Create Account</div>
+      <h2>Register</h2>
+      <p class="lead" style="margin:0 auto; max-width:520px;">Create your account to access the project ledger.</p>
+    </div>
+
+    <form class="form-box" id="registerForm" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="e.g. aarav_sharma" required>
+        <div class="error" id="userError"></div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@school.edu" required>
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number <span class="small-muted">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="98XXXXXXXX">
+        <div class="error" id="phoneError"></div>
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of Birth <span class="small-muted">(optional)</span></label>
+        <input type="date" id="dob" name="dob">
+        <div class="error" id="dobError"></div>
+      </div>
+
+      <div class="field">
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="">Loading departments…</option>
+        </select>
+        <div class="error" id="departmentError"></div>
+      </div>
+
+      <fieldset>
+        <legend>Role</legend>
+        <div class="radio-group">
+          <span class="radio-row">
+            <input type="radio" id="roleStudent" name="role" value="student" checked>
+            <label for="roleStudent" style="margin:0;">Student</label>
+          </span>
+          <span class="radio-row">
+            <input type="radio" id="roleTeacher" name="role" value="teacher">
+            <label for="roleTeacher" style="margin:0;">Teacher</label>
+          </span>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
+        <div class="error" id="passError"></div>
+      </div>
+
+      <div class="field">
+        <label for="confirmPass">Confirm Password</label>
+        <input type="password" id="confirmPass" name="confirmPass" placeholder="Repeat password" required>
+        <div class="error" id="confirmError"></div>
+      </div>
+
+      <div class="check-row">
+        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+        <label for="agreeTerms" style="margin:0; font-weight:400;">I agree to the usage policy</label>
+      </div>
+      <div class="error" id="agreeError"></div>
+
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:14px;">Create Account</button>
+      <div id="regMsg"></div>
+      <p class="small-muted text-center" style="margin-top:14px;">Already have an account? <a href="login.html">Login</a>.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

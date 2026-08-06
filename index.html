@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic Project Tracker — department ledger for tracking student projects, progress, grades, and deadlines.">
+<title>Academic Project Tracker | Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text">
+        <h1>Academic Project Tracker</h1>
+        <span>Department Ledger &amp; Progress Desk</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="add-project.html">Add Project</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <section class="hero">
+      <h2>Every project, one desk.</h2>
+      <p>Track academic projects from proposal to final grading. View progress, grades, deadlines, and reviewer notes in one simplified ledger.</p>
+      <div class="cta-row">
+        <a href="add-project.html" class="btn btn-primary">Log a New Project</a>
+        <a href="projects.html" class="btn btn-secondary">View All Projects</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="stats-heading">
+      <h2 id="stats-heading">Desk Summary</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Projects</div>
+          <div class="stat-value" id="totalProjects">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Completed</div>
+          <div class="stat-value" id="completedProjects">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Registered Teachers</div>
+          <div class="stat-value" id="totalTeachers">0</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="card">
+        <h3>Recently Logged Projects</h3>
+        <div id="recentProjects"></div>
+      </article>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

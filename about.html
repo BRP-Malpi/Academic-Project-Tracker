@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Academic Project Tracker — centralized system for student capstone tracking, planning, and evaluation.">
+<title>About | Academic Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text"><h1>Academic Project Tracker</h1><span>Department Ledger &amp; Progress Desk</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="add-project.html">Add Project</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-intro">
+      <div class="eyebrow">About the System</div>
+      <h2>About Us</h2>
+      <p class="lead">The Academic Project Tracker helps teachers and students track and manage academic project progress in one simple tool.</p>
+    </div>
+
+    <article class="section card">
+      <h3>Why Use Us?</h3>
+      <p>Our Academic Project Tracker keeps all project information organized. Instead of tracking progress in separate files, everything is managed cleanly in one place. Teachers can review submissions and track student progress easily.</p>
+
+      <figure>
+        <img src="images/images (1).webp" alt="Academic project review session">
+        <figcaption>A simple way for students and teachers to manage academic projects together.</figcaption>
+      </figure>
+
+      <h4>Core System Features</h4>
+      <ul>
+        <li><strong>Easy Project Tracking:</strong> Add and manage your projects without hassle.</li>
+        <li><strong>Progress Updates:</strong> Track progress visually as work advances.</li>
+        <li><strong>Deadline Management:</strong> Keep deadlines clear and stay on schedule.</li>
+        <li><strong>Simple Collaboration:</strong> Submit projects and receive reviewer feedback.</li>
+      </ul>
+
+      <blockquote>
+        “A simplified workspace to record project progression from proposal to final evaluation.”
+      </blockquote>
+
+      <h4>System Architecture</h4>
+      <p>The system stores project information directly in browser storage (IndexedDB), ensuring data remains saved across sessions without external server setup.</p>
+    </article>
+
+    <div class="two-col">
+      <section class="card">
+        <h3>Support &amp; Usage FAQ</h3>
+        <details open>
+          <summary>How do I view projects?</summary>
+          <p class="small-muted">Go to the Projects page to view active department projects.</p>
+        </details>
+        <details>
+          <summary>Is my data saved across restarts?</summary>
+          <p class="small-muted">Yes, all records and project changes are saved locally in IndexedDB.</p>
+        </details>
+      </section>
+
+      <aside class="card">
+        <h3>Contact Information</h3>
+        <p class="small-muted">Developed to help students and faculty manage capstones. Contact the Faculty Office for assistance.</p>
+        <address>
+          Faculty Coordination Office<br>
+          Malpi International College<br>
+          <a href="https://mic.edu.np/">mic.edu.np</a>
+        </address>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  updateNavForSession();
+</script>
+</body>
+</html>

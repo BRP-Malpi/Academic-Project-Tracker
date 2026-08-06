@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Visual media showcase of student projects.">
+<title>Gallery | Academic Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text"><h1>Academic Project Tracker</h1><span>Department Ledger &amp; Progress Desk</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="add-project.html">Add Project</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-intro">
+      <div class="eyebrow">Visual Gallery</div>
+      <h2>Project Media Showcase</h2>
+      <p class="lead">View photographs of student projects and academic activities.</p>
+    </div>
+
+    <section class="section card">
+      <h3>Project Photo Carousel</h3>
+      <div class="carousel" id="projectCarousel">
+        <div class="slides" id="carSlides"></div>
+        <button class="car-btn car-prev" id="carPrev" aria-label="Previous slide">&#10094;</button>
+        <button class="car-btn car-next" id="carNext" aria-label="Next slide">&#10095;</button>
+        <div class="dots" id="carDots"></div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h3>Student Project Gallery</h3>
+      <div class="gallery" id="cssGallery"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/gallery-images.js"></script>
+<script>
+$(function () {
+  updateNavForSession();
+
+  const $grid = $("#cssGallery").empty();
+  const $carSlides = $("#carSlides");
+  const $dots = $("#carDots");
+
+  if (typeof galleryImages !== "undefined" && Array.isArray(galleryImages)) {
+    galleryImages.forEach((img, idx) => {
+      const id = "img" + (idx + 1);
+      $grid.append(`<a href="#${id}" class="gallery-item"><img src="images/${img}" alt="Gallery Image ${idx + 1}"></a>`);
+      $("body").append(`<div class="lightbox" id="${id}"><a href="#cssGallery" class="lb-close">&times;</a><div><img src="images/${img}" alt="Gallery Image ${idx + 1}"></div></div>`);
+
+      const $slide = $('<div class="slide"></div>').append(`<img src="images/${img}" alt="Gallery Image ${idx + 1}">`);
+      if (idx === 0) $slide.addClass("active");
+      $carSlides.append($slide);
+
+      const $dot = $('<span class="dot"></span>').attr("data-index", idx);
+      if (idx === 0) $dot.addClass("active");
+      $dots.append($dot);
+    });
+  }
+
+  const $slides = $("#projectCarousel .slide");
+  let current = 0;
+  let timer;
+
+  function goToSlide(index) {
+    if ($slides.length === 0) return;
+    $slides.eq(current).removeClass("active");
+    $("#carDots .dot").eq(current).removeClass("active");
+    current = (index + $slides.length) % $slides.length;
+    $slides.eq(current).addClass("active");
+    $("#carDots .dot").eq(current).addClass("active");
+  }
+
+  $("#carNext").on("click", () => { goToSlide(current + 1); resetTimer(); });
+  $("#carPrev").on("click", () => { goToSlide(current - 1); resetTimer(); });
+  $("#carDots").on("click", ".dot", function () {
+    goToSlide(parseInt($(this).attr("data-index"), 10));
+    resetTimer();
+  });
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goToSlide(current + 1), 4500);
+  }
+  resetTimer();
+});
+</script>
+</body>
+</html>

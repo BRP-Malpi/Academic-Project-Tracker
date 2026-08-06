@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Academic Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text"><h1>Academic Project Tracker</h1><span>Department Ledger &amp; Progress Desk</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="add-project.html">Add Project</a>
+      <a href="login.html" aria-current="page">Login</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-intro text-center">
+      <div class="eyebrow">Sign In</div>
+      <h2>Login</h2>
+      <p class="lead" style="margin:0 auto; max-width:520px;">Sign in to access your project dashboard.</p>
+    </div>
+
+    <form class="form-box" id="loginForm" novalidate>
+      <div class="field">
+        <label for="loginUser">Username</label>
+        <input type="text" id="loginUser" name="loginUser" placeholder="Your username" autocomplete="username" required>
+        <div class="error" id="loginUserError"></div>
+      </div>
+
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <input type="password" id="loginPass" name="loginPass" placeholder="Your password" autocomplete="current-password" required>
+        <div class="error" id="loginPassError"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+      <div id="loginMsg"></div>
+      <p class="small-muted text-center" style="margin-top:14px;">No account yet? <a href="register.html">Register here</a>.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

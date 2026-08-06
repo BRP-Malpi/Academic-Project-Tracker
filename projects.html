@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Academic Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text"><h1>Academic Project Tracker</h1><span>Department Ledger &amp; Progress Desk</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="add-project.html">Add Project</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-intro">
+      <div class="eyebrow">Projects</div>
+      <h2>Academic Projects</h2>
+      <p class="lead">View and manage academic projects in one place. Sort the project list, update progress, and keep track of project details.</p>
+    </div>
+
+    <section class="section card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+        <h3>Active Projects</h3>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="data-table" id="projectTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="name">Project Name</th>
+              <th class="sortable" data-sort="student">Student</th>
+              <th class="sortable" data-sort="category">Category</th>
+              <th class="sortable" data-sort="progress">Progress</th>
+              <th class="sortable" data-sort="grade">Grade</th>
+              <th class="sortable" data-sort="deadline">Deadline</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projectTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section class="card">
+        <h3>Update Grade</h3>
+        <div class="field">
+          <label for="gradeSelect">Select Project</label>
+          <select id="gradeSelect"></select>
+        </div>
+        <div class="field">
+          <label for="newGrade">New Grade (0–100)</label>
+          <input type="number" id="newGrade" min="0" max="100" placeholder="e.g. 85">
+        </div>
+        <button class="btn btn-primary btn-block" onclick="updateGrade()">Update Grade</button>
+        <div id="gradeMsg"></div>
+      </section>
+
+      <section class="card">
+        <h3>Update Progress</h3>
+        <div class="field">
+          <label for="progressSelect">Select Project</label>
+          <select id="progressSelect"></select>
+        </div>
+        <div class="field">
+          <label>New Progress: <span id="progressValDisplay">50</span>%</label>
+          <div id="newProgressSlider" style="margin: 15px 4px 10px;"></div>
+          <input type="hidden" id="newProgress" value="50">
+        </div>
+        <button class="btn btn-primary btn-block" onclick="updateProgress()">Update Progress</button>
+        <div id="progressMsg"></div>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+[
+  { "name": "Water Quality Sensor Network", "student": "Aarav Sharma", "category": "Engineering", "grade": 88, "progress": 100, "deadline": "2026-06-10", "status": "completed", "notes": "Presented at the department fair." },
+  { "name": "Machine Translation for Nepali Dialects", "student": "Priya Gurung", "category": "Computer Science", "grade": 92, "progress": 70, "deadline": "2026-08-02", "status": "in-progress", "notes": "Model training in progress." },
+  { "name": "Urban Heat Island Mapping", "student": "Bishal Rai", "category": "Environmental Science", "grade": 0, "progress": 25, "deadline": "2026-09-14", "status": "started", "notes": "Collecting satellite imagery." },
+  { "name": "Low-Cost Prosthetic Hand", "student": "Sunita Thapa", "category": "Mechanical", "grade": 95, "progress": 100, "deadline": "2026-05-20", "status": "completed", "notes": "Second prototype approved." },
+  { "name": "Community Solar Micro-grid", "student": "Kiran Adhikari", "category": "Electrical", "grade": 0, "progress": 45, "deadline": "2026-08-28", "status": "in-progress", "notes": "Budget approved, parts on order." }
+]

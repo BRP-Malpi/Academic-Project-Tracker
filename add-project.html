@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Project | Academic Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="seal">APT</span>
+      <span class="brand-text"><h1>Academic Project Tracker</h1><span>Department Ledger &amp; Progress Desk</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="add-project.html" aria-current="page">Add Project</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-intro text-center">
+      <div class="eyebrow">Add Project</div>
+      <h2>Add a New Project</h2>
+      <p class="lead" style="margin:0 auto; max-width: 600px;">Fill in the project details below to add a new academic project and track its progress.</p>
+    </div>
+
+    <form class="form-box wide" id="addProjectForm" novalidate>
+      <fieldset>
+        <legend>Project Information</legend>
+
+        <div class="field">
+          <label for="pName">Project Title</label>
+          <input type="text" id="pName" placeholder="e.g. Smart Water Management System" required minlength="4">
+          <div class="error" id="pNameError"></div>
+        </div>
+
+        <div class="field">
+          <label for="pDescription">Description</label>
+          <textarea id="pDescription" placeholder="Brief explanation of project scope and goals..." required style="min-height: 80px;"></textarea>
+          <div class="error" id="pDescriptionError"></div>
+        </div>
+
+        <div class="field">
+          <label for="pTechnology">Technology</label>
+          <select id="pTechnology" required>
+            <option value="">Loading technologies...</option>
+          </select>
+          <div class="error" id="pTechnologyError"></div>
+        </div>
+
+        <div class="field">
+          <label for="pCategory">Category</label>
+          <input type="text" id="pCategory" placeholder="e.g. Computer Science" required>
+          <div class="error" id="pCategoryError"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Planning &amp; Progress</legend>
+
+        <div class="field">
+          <label for="pDeadline">Deadline Date</label>
+          <input type="text" id="pDeadline" placeholder="Choose a deadline date" readonly required>
+          <div class="error" id="pDeadlineError"></div>
+        </div>
+
+        <div class="field">
+          <label for="pProgress">Current Progress: <output id="pProgressOut">0</output>%</label>
+          <input type="range" id="pProgress" min="0" max="100" value="0" step="5">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Notes</legend>
+        <div class="field">
+          <label for="pNotes">Notes</label>
+          <textarea id="pNotes" placeholder="Additional comments or supervisor notes..."></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary btn-block">Save Project</button>
+      <div id="addProjectMsg" style="margin-top: 15px;"></div>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container text-center">
+    <p class="small-muted" style="margin:0;">&copy; 2026 Academic Project Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/add-project.js"></script>
+</body>
+</html>
